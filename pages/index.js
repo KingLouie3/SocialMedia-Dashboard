@@ -5,6 +5,8 @@ import styles from "../styles/Home.module.css";
 import { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import Card from './components/Card'
+import Overview from './components/OverviewCard';
+import OverviewCard from "./components/OverviewCard";
 
 export default function Home() {
   const [enabled, setEnabled] = useState(false)
@@ -28,12 +30,62 @@ export default function Home() {
             </Switch>
         </div>
       </div>
-
-       @nathanf 1044 Followers 99 Today
-      @realnathanf 11k Followers 1099 Today Nathan F. 8239 Subscribers 144 Today
-      Overview - Today Page Views 87 3% Likes 52 2% Likes 5462 2257% Profile
-      Views 52k 1375% Retweets 117 303% Likes 507 553% Likes 107 19% Total Views
-      1407 12%
+      {/* top container ends */}
+      <Card 
+      media= {"facebook"}
+      followers = {1987}
+      username = {''}
+      trend = {'up'}
+      daily = {30}
+      />
+      <Card 
+      media= {"twitter"}
+      followers = {1987}
+      username = {''}
+      trend = {'up'}
+      daily = {18}
+      />
+      <Card 
+      media= {"ig"}
+      followers = {1987}
+      username = {''}
+      trend = {'down'}
+      daily = {45}
+      />
+      <Card 
+      media= {"youtube"}
+      followers = {1987}
+      username = {''}
+      trend = {'down'}
+      daily = {144}
+      />
+       <OverviewCard
+      media={"facebook"}
+      title={'Page Views'}
+      numbers={87}
+      trend={'up'}
+      percentage={23}
+      />
+       <OverviewCard
+      media={"facebook"}
+      title={'Page Views'}
+      numbers={52}
+      trend={'up'}
+      />
+       <OverviewCard
+      media={"facebook"}
+      title={'Page Views'}
+      numbers={5462}
+      trend={'down'}
+      />
+       <OverviewCard
+      media={"facebook"}
+      title={'Page Views'}
+      numbers={52}
+      trend={'up'}
+      />
+      
+   
     </body>
   );
 }

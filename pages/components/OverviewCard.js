@@ -1,7 +1,6 @@
-import React from "react";
-import Data from "./SocialData";
+import React from 'react'
 
-function Card(props) {
+function OverviewCard(props) {
     const logos = {
         facebook: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#178FF5" d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg>,
         twitter:<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17"><path fill="#1DA1F2" d="M20 1.924a8.192 8.192 0 01-2.357.646A4.11 4.11 0 0019.448.3a8.22 8.22 0 01-2.606.996A4.096 4.096 0 0013.847 0c-2.65 0-4.596 2.472-3.998 5.037A11.648 11.648 0 011.392.752a4.109 4.109 0 001.27 5.478 4.086 4.086 0 01-1.858-.513C.76 7.616 2.122 9.395 4.095 9.79a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.833 2.849A8.25 8.25 0 010 14.41a11.616 11.616 0 006.29 1.843c7.618 0 11.922-6.434 11.663-12.205A8.354 8.354 0 0020 1.924z"/></svg>,
@@ -10,53 +9,45 @@ function Card(props) {
         up: <svg xmlns="http://www.w3.org/2000/svg" width="8" height="4"><path fill="#1EB589" fill-rule="evenodd" d="M0 4l4-4 4 4z"/></svg>,
         down: <svg xmlns="http://www.w3.org/2000/svg" width="8" height="4"><path fill="#DC414C" fill-rule="evenodd" d="M0 0l4 4 4-4z"/></svg>
     }
-  //icons and daily trend
-  let icon;
-  let trend;
+    let icon;
+    let trend;
+    switch (props.media) {
+        case "facebook":
+          icon = logos.facebook;
+          break;
+        case "twitter":
+          icon = logos.twitter;
+          break;
+        case "ig":
+          icon = logos.ig;
+          break;
+        case "youtube":
+          icon = logos.youtube;
+        // code block
+      }
 
-
-  switch (props.media) {
-    case "facebook":
-      icon = logos.facebook;
-      break;
-    case "twitter":
-      icon = logos.twitter;
-      break;
-    case "ig":
-      icon = logos.ig;
-      break;
-    case "youtube":
-      icon = logos.youtube;
-    // code block
-  }
-
-  switch (props.trend) {
-      case 'up':
-          trend = logos.up;
-          break
-      case 'down':
-          trend = logos.down    
-
-  }
-
-  return (
-    <div
-      className="flex flex-col justify-center items-center
-     bg-primary-card rounded-xl border-t-4 border-blue m-10 h-56"
-    >
-      <div className="flex">
-        <div>{icon}</div>
-        <p className="pl-2 font-semibold">@nathanf</p>
-      </div>
-      <div className="pt-6 text-6xl font-bold">{props.followers}</div>
-      <div className="font-light text-2xl">Followers</div>
-      <div className="flex justify-center w-full pt-2">
-        <div>{trend}</div>
-        {/* <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><path fill="#1EB589" fill-rule="evenodd" d="M0 4l4-4 4 4z"/>1111</svg> */}
-        <p className={props.trend == 'down' ? 'text-red-700 font-bold': 'text-green-700 font-bold'}>{props.daily} Today</p>
-      </div>
-    </div>
-  );
+      switch (props.trend) {
+        case 'up':
+            trend = logos.up;
+            break
+        case 'down':
+            trend = logos.down    
+  
+    }
+    return (
+        // container
+        <div className="flex flex-col p-8
+        bg-primary-card rounded-xl border-t-4 border-blue m-10 h-32">
+            <div className="flex justify-between">
+                <p>{props.title}</p>
+                <p>{icon}</p>
+            </div>
+            <div className="flex justify-between pt-6">
+                <h1 className="text-4xl font-bold">{props.numbers}</h1>
+                <p className={props.trend == 'down' ? 'text-red-700 font-bold': 'text-green-700 font-bold'}>{props.percentage}%</p>
+            </div>           
+        </div>
+    )
 }
 
-export default Card;
+export default OverviewCard
