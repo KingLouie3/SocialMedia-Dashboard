@@ -64,26 +64,58 @@ export default function Home() {
       title={'Page Views'}
       numbers={87}
       trend={'up'}
+      percentage={3}
+      />
+       <OverviewCard
+      media={"facebook"}
+      title={'Likes'}
+      numbers={52}
+      trend={'down'}
+      percentage={2}
+      />
+       <OverviewCard
+      media={"ig"}
+      title={'Likes'}
+      numbers={5462}
+      trend={'up'}
+      percentage={2257}
+      />
+       <OverviewCard
+      media={"ig"}
+      title={'Page Views'}
+      numbers={87}
+      trend={'up'}
       percentage={23}
       />
        <OverviewCard
-      media={"facebook"}
-      title={'Page Views'}
-      numbers={52}
+      media={"twitter"}
+      title={'Retweets'}
+      numbers={117}
       trend={'up'}
+      percentage={303}
       />
        <OverviewCard
-      media={"facebook"}
-      title={'Page Views'}
-      numbers={5462}
+      media={"twitter"}
+      title={'Likes'}
+      numbers={507}
+      trend={'up'}
+      percentage={533}
+      />
+       <OverviewCard
+      media={"youtube"}
+      title={'Likes'}
+      numbers={107}
       trend={'down'}
+      percentage={19}
       />
        <OverviewCard
-      media={"facebook"}
-      title={'Page Views'}
-      numbers={52}
-      trend={'up'}
+      media={"youtube"}
+      title={'Total Views'}
+      numbers={1407}
+      trend={'down'}
+      percentage={533}
       />
+       
       
    
     </body>
